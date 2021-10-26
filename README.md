@@ -7,3 +7,4 @@
 - https://supabase.io/docs/guides/auth
 - https://supabase.io/docs/guides/auth/auth-google
 - https://supabase.io/docs/guides/auth/auth-github
+- https://supabase.io/docs/reference/javascript/generating-types
