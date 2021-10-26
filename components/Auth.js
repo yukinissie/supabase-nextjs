@@ -11,6 +11,12 @@ export default function Auth() {
     });
   }
 
+  async function signInWithGithub() {
+    const { user, session, error } = await supabase.auth.signIn({
+      provider: "github",
+    });
+  }
+
   const handleLogin = async (email) => {
     try {
       setLoading(true);
@@ -61,9 +67,18 @@ export default function Auth() {
           >
             <span>{loading ? "Loading" : "SignIn with Google"}</span>
           </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              signInWithGithub();
+            }}
+            className="button block"
+            disabled={loading}
+          >
+            <span>{loading ? "Loading" : "SignIn with GitHub"}</span>
+          </button>
         </div>
       </div>
     </div>
   );
 }
-
